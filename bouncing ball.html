@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, bouncing ball!</title>
+    <script type="text/javascript">
+    </script>
+    <style type="text/css">
+        div{
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background: red;
+              position: relative;
+              left: 0;
+              -webkit-animation: myfirst 2s linear 0s alternate forwards;
+        }
+        @-webkit-keyframes myfirst {
+            0%   {top:0px;}
+            5%   {top:30px;}
+            10%  {top:70px;}
+            15%  {top:120px;}
+            20%  {top:184px;}
+            25%  {top:260px;}
+            31%  {top:200px;}
+            37%  {top:170px;}
+            46%  {top:220px;}
+            53%  {top:260px;}
+            65%  {top:230px;}
+            75%  {top:260px;}
+            85%  {top:240px;}
+            100% {top:260px;}
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

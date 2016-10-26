@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>transform</title>
+    <script type="text/javascript">
+    </script>
+    <style type="text/css">
+        div.rotate{
+          width: 200px;
+          height: 100px;
+          background-color: yellow;
+          border: 1px solid grey;
+          transform:rotate(9deg);
+          -ms-transform:rotate(9deg); /* Internet Explorer */
+          -moz-transform:rotate(9deg); /* Firefox */
+          -webkit-transform:rotate(9deg); /* Safari 和 Chrome */
+          -o-transform:rotate(9deg); /* Opera */
+          transform-origin: 0;
+        }
+        div.translate{
+          width:100px;
+          height:75px;
+          background-color: yellow;
+          border: 1px solid grey;
+          -webkit-transform:translate(100px,75px);
+        }
+        div.scale{
+          margin-top: 95px;
+          width:100px;
+          height:75px;
+          background-color: yellow;
+          border: 1px solid grey;
+          -webkit-transform:scale(2,1);
+          transform-origin: 0;
+        }
+        div.skew{
+          margin-top: 15px;
+          width:100px;
+          height:75px;
+          background-color: yellow;
+          border: 1px solid grey;
+          -webkit-transform:skew(-10deg,0deg);
+          transform-origin: 0;
+        }
+        div.martrix{
+          margin-top: 15px;
+          width:100px;
+          height:75px;
+          background-color: yellow;
+          border: 1px solid grey;
+          -webkit-transform:matrix(0.866,0.5,-0.5,0.866,0,0);//旋转30度
+          transform-origin: 0;
+        }
+        div.rotateX{
+          margin-top: 15px;
+          width:100px;
+          height:75px;
+          background-color: yellow;
+          border: 1px solid grey;
+          -webkit-transform:rotateX(180deg);
+          transform-origin: 0;
+        }
+        #div1{//舞台元素
+          margin-top: 15px;
+          width:100px;
+          height:75px;
+          border: 1px solid grey;
+
+          position: relative;
+          /*-webkit-perspective:150;*/
+        }
+
+        #div2{//动画元素
+          width:100px;
+          height:75px;
+          background-color: yellow;
+
+          position: absolute;
+          -webkit-transform: perspective(150px) rotateX(45deg);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="rotate">这是一个旋转的div</div>
+    <div class="translate">这是一个偏移的div</div>
+    <div class="scale">这是一个拉伸的div</div>
+    <div class="skew">这是一个歪斜的div</div>
+    <div class="martrix">这是一个旋转的div</div>
+    <div class="rotateX">这是一个3d旋转的div</div>
+    <div id="div1">
+      <div id="div2">hello</div>
+    </div>
+</body>
+</html>

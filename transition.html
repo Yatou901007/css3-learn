@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>transition</title>
+    <script type="text/javascript">
+    </script>
+    <style type="text/css">
+        div.transition{
+          opacity: 0.4;
+          background: #92B901;
+          width: 65px;
+          height: 40px;
+          font-size: 12px;
+          color: #ffffff;
+          padding: 20px 10px 0px 10px;
+          border-radius: 5px;
+          -webkit-transition:-webkit-transform 1s,opacity 1s,background 1s,width 1s,height 1s,font-size 1s; 
+        }
+        div.transition:hover{
+          opacity: 1;
+          background: #1ec7e6;
+          width: 90px; 
+          height: 60px;
+          font-size: 16px;
+          -webkit-transform:rotate(360deg); 
+        }
+        
+
+        .container {
+          margin-top: 15px;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          background-color: #cccccc;
+        }
+        .flip-container, .front, .back {
+          border-radius: 4px;
+          width: 200px;
+          height: 180px;
+        }
+        .flip-container {
+          -webkit-perspective: 1000;
+          -moz-perspective: 1000;
+          -ms-perspective: 1000;
+          perspective: 1000;
+          -ms-transform: perspective(1000px);
+          -moz-transform: perspective(1000px);
+          -moz-transform-style: preserve-3d; 
+          -ms-transform-style: preserve-3d; 
+        }
+        .flip-container:hover .flipper, .flip-container.hover .flipper, #flip-toggle.flip .flipper {
+          -webkit-transform: rotateY(180deg);
+          -moz-transform: rotateY(180deg);
+          -ms-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+          filter: FlipH;
+          -ms-filter: "FlipH";
+        }
+        /* START: Accommodating for IE */
+        .ie .flip-container:hover .back, .ie .flip-container.hover .back {
+          -webkit-transform: rotateY(0deg);
+          -moz-transform: rotateY(0deg);
+          -o-transform: rotateY(0deg);
+          -ms-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+        }
+        .ie .flip-container:hover .front, .ie .flip-container.hover .front {
+          -webkit-transform: rotateY(180deg);
+          -moz-transform: rotateY(180deg);
+          -o-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+        }
+        /* END: Accommodating for IE */
+        .flipper {
+          -webkit-transition: 0.6s;
+          -webkit-transform-style: preserve-3d;
+          -ms-transition: 0.6s;
+          -moz-transition: 0.6s;
+          -moz-transform: perspective(1000px);
+          -moz-transform-style: preserve-3d;
+          -ms-transform-style: preserve-3d;
+          transition: 0.6s;
+          transform-style: preserve-3d;
+          position: relative;
+        }
+        .front, .back {
+          -webkit-backface-visibility: hidden;
+          -moz-backface-visibility: hidden;
+          -ms-backface-visibility: hidden;
+          backface-visibility: hidden;
+          -webkit-transition: 0.6s;
+          -webkit-transform-style: preserve-3d;
+          -webkit-transform: rotateY(0deg);
+          -moz-transition: 0.6s;
+          -moz-transform-style: preserve-3d;
+          -moz-transform: rotateY(0deg);
+          -o-transition: 0.6s;
+          -o-transform-style: preserve-3d;
+          -o-transform: rotateY(0deg);
+          -ms-transition: 0.6s;
+          -ms-transform-style: preserve-3d;
+          -ms-transform: rotateY(0deg);
+          transition: 0.6s;
+          transform-style: preserve-3d;
+          transform: rotateY(0deg);
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .front {
+          -webkit-transform: rotateY(0deg);
+          -ms-transform: rotateY(0deg);
+          z-index: 2;
+          background-color: #eeeeee;
+        }
+        .back {
+          -webkit-transform: rotateY(-180deg);
+          -moz-transform: rotateY(-180deg);
+          -o-transform: rotateY(-180deg);
+          -ms-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+          background-color: #ffffff;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="transition">css3过渡</div>
+
+    <div class="container">
+    <div class="flip-container">
+      <div class="flipper">
+        <div class="front">
+          FRONT
+        </div>
+        <div class="back">
+          BACK
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

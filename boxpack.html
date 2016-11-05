@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>box</title>
+    <script type="text/javascript">
+      function changepack(value){
+        document.getElementsByClassName('test_box')[0].style["WebkitBoxPack"] = value;
+      }
+    </script>
+    <style type="text/css">
+        .test_box {
+            display: -moz-box; 
+            display: -webkit-box; 
+            display: box; 
+            height: 250px;
+            -webkit-box-align: stretch;
+            padding: 20px; 
+            background: #f0f3f9;
+         }
+        .list {
+            padding: 0 1em; 
+            font: bold 36px/120px monaco; 
+            text-shadow: 1px 1px #eee;
+        }
+    </style>
+</head>
+<body>
+    <select name="orient" id="orient" onchange="changepack(this.value)">
+        <option value="start">start</option>
+        <option value="end">end</option>
+        <option value="center">center</option>
+        <option value="justify">justify</option>
+    </select>
+    <br>
+    box-pack决定了父标签水平遗留空间的使用<br>
+    就大部分的行为表现来说分别对应text-align属性的值：left | right | center | justify；但是，之所以box-pack不使用”left”, 而是”start”，是因为box-direction属性，这玩意可以反转原本的排列，原本的“左对齐”反转后结果是“右对齐”了，此时”left”显然就词不达意了，所以使用”start”更具有概括性，就是与父标签的起始位置对齐，从而不会产生语义与行为上的困扰。
+    <div class="test_box">
+        <div class="list" style="background: red;">1</div>
+        <div class="list" style="background: yellow;">2</div>
+        <div class="list" style="background: green;">3</div>
+    </div>
+</body>
+</html>

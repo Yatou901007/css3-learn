@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>box</title>
+    <script type="text/javascript">
+      function changealign(value){
+        document.getElementsByClassName('test_box')[0].style["WebkitBoxAlign"] = value;
+      }
+    </script>
+    <style type="text/css">
+        .test_box {
+            display: -moz-box; 
+            display: -webkit-box; 
+            display: box; 
+            height: 250px;
+            -webkit-box-align: stretch;
+            padding: 20px; 
+            background: #f0f3f9;
+         }
+        .list {
+            padding: 0 1em; 
+            font: bold 36px/120px monaco; 
+            text-shadow: 1px 1px #eee;
+        }
+    </style>
+</head>
+<body>
+    <select name="orient" id="orient" onchange="changealign(this.value)">
+        <option value="start">start</option>
+        <option value="end">end</option>
+        <option value="center">center</option>
+        <option value="baseline">baseline</option>
+        <option value="stretch">stretch</option>
+    </select>
+    <br>
+    box-align与box-pack都是决定盒子内部剩余空间怎么使用的。<br>
+    在行为效果上就是表现为“对齐”。<br>
+    其中box-align决定了垂直方向上的空间利用，也就是垂直方向上的对齐表现。<br>
+    为了便于记忆，我们可以拿来和CSS2中的vertical-align隐射记忆，两者都有”align”，都是都是垂直方向的对齐；<br>
+    而剩下的box-pack就是水平方向的了。
+    <div class="test_box">
+        <div class="list" style="background: red;">1</div>
+        <div class="list" style="background: yellow; line-height: 200px;">2</div>
+        <div class="list" style="background: green;">3</div>
+    </div>
+</body>
+</html>

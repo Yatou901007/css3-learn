@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>box</title>
+    <script type="text/javascript">
+      function changeorient(value){
+        document.getElementsByClassName('test_box')[0].style["WebkitBoxOrient"] = value;
+      }
+    </script>
+    <style type="text/css">
+        .test_box {
+            display: -moz-box; 
+            display: -webkit-box; 
+            display: box; 
+            -webkit-box-orient: horizontal;
+            padding: 20px; 
+            background: #f0f3f9;
+         }
+        .list {
+            padding: 0 1em; 
+            font: bold 36px/120px monaco; 
+            text-shadow: 1px 1px #eee;
+        }
+    </style>
+</head>
+<body>
+    <select name="orient" id="orient" onchange="changeorient(this.value)">
+        <option value="horizontal">horizontal</option>
+        <option value="vertical">vertical</option>
+        <option value="inline-axis">inline-axis</option>
+        <option value="block-axis">block-axis</option>
+        <option value="inherit">inherit</option>
+    </select>
+    box-orient用来确定子元素的方向。是横着排还是竖着走
+    <div class="test_box">
+        <div class="list" style="background: red;">1</div>
+        <div class="list" style="background: yellow;">2</div>
+        <div class="list" style="background: green;">3</div>
+    </div>
+</body>
+</html>

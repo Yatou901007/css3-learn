@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>轮播图</title>
+  <link href="slider.css" rel="stylesheet">
+  <script src="./lib/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="wrapper"><!-- 最外层部分 -->
+        <div id="banner"><!-- 轮播部分 -->
+            <ul class="imgList"><!-- 图片部分 -->
+                <li><a href="#"><img src="./img/banner/banner1.jpg" width="400px" height="200px" alt="puss in boots1"></a></li>
+                <li><a href="#"><img src="./img/banner/banner2.jpg" width="400px" height="200px" alt="puss in boots2"></a></li>
+                <li><a href="#"><img src="./img/banner/banner3.jpg" width="400px" height="200px" alt="puss in boots3"></a></li>
+            </ul>
+
+            <img src="./img/prev.png" width="40px" height="40px" id="prev">
+            <img src="./img/next.png" width="40px" height="40px" id="next">
+            <div class="bg"></div> <!-- 图片底部背景层部分-->
+            <ul class="infoList"><!-- 图片左下角文字信息部分 -->
+                <li class="infoOn">puss in boots1</li>
+                <li>puss in boots2</li>
+                <li>puss in boots3</li>
+            </ul>
+            <ul class="indexList"><!-- 图片右下角序号部分 -->
+                <li class="indexOn">1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="slider.js"></script>
+</body>
+</html>
